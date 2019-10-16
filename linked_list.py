@@ -31,5 +31,5 @@ class LinkedList:
             return True
 
     def last(self, value = None):
-        pass
-        
+        if self.next == self.prev:
+            return self.next
