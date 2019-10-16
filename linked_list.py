@@ -33,3 +33,18 @@ class LinkedList:
     def last(self, value = None):
         if self.next == self.prev:
             return self.next
+    
+    def append(self, node):
+        if self.next == self.prev: 
+            self.next = node
+            node.next = self
+            node.prev = self
+            self.prev = node
+        elif self.prev == self.next:
+            self.next = node
+            node.next = self.next
+            node.prev = self
+            node.next.prev = node
+        else:
+            self = self.next
+            self.next.append(node)
