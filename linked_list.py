@@ -21,10 +21,10 @@ class LinkedList:
             return False
 
     def is_empty(self, value = None):
-        if self.next == self.prev:
-            return True
-        else:
+        if self.next != self or self.prev != self:
             return False
+        else:
+            return True
     
     def is_last(self, value = None):
         if self.prev == self.next:
