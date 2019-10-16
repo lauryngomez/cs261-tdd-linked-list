@@ -9,6 +9,27 @@
 
 class LinkedList:
 
-    def __init__(self):
-        self.value = None
+    def __init__(self, value = None):
+        self.value = value
+        self.next = self
+        self.prev = self
 
+    def is_sentinel(self, value = None):
+        if self.value == value:
+            return True
+        else:
+            return False
+
+    def is_empty(self, value = None):
+        if self.next == self.prev:
+            return True
+        else:
+            return False
+    
+    def is_last(self, value = None):
+        if self.prev == self.next:
+            return True
+
+    def last(self, value = None):
+        pass
+        
