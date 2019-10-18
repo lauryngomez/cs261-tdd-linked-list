@@ -43,9 +43,16 @@ class LinkedList:
             node.prev = self
             self.prev = node
         elif self.is_last():
-            self.next = node
             node.next = self.next
+            self.next = node
             node.prev = self
             node.next.prev = node
         else:
-            self = self.next.append(node)
+            self = self.next
+            self.append(node)
+
+    def delete(self):
+        left_node = self.prev
+        right_node = self.next
+        right_node.prev = left_node
+        left_node.next = right_node
