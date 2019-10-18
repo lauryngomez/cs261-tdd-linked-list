@@ -56,3 +56,12 @@ class LinkedList:
         right_node = self.next
         right_node.prev = left_node
         left_node.next = right_node
+
+    def insert(self, node):
+        left_node = self
+        right_node = self.next
+        node.prev = left_node
+        node.next = right_node
+        right_node.prev = node
+        left_node.next = node
+        
