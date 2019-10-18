@@ -21,30 +21,31 @@ class LinkedList:
             return False
 
     def is_empty(self, value = None):
-        if self.next != self or self.prev != self:
-            return False
-        else:
+        if self.next == self and self.prev == self:
             return True
+        else:
+            return False
     
     def is_last(self, value = None):
-        if self.prev == self.next:
-            return True
+        return self.next.is_sentinel()
 
     def last(self, value = None):
-        if self.next == self.prev:
-            return self.next
+        if self.next.is_sentinel():
+            return self
+        else:
+            self = self.next
+            return self.last()
     
     def append(self, node):
-        if self.next == self.prev: 
+        if self.is_empty(): 
             self.next = node
             node.next = self
             node.prev = self
             self.prev = node
-        elif self.prev == self.next:
+        elif self.is_last():
             self.next = node
             node.next = self.next
             node.prev = self
             node.next.prev = node
         else:
-            self = self.next
-            self.next.append(node)
+            self = self.next.append(node)
