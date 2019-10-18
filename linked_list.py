@@ -71,3 +71,9 @@ class LinkedList:
         else:
             self = self.next
             return self.at(index-1)
+
+    def search(self, value):
+        if self.value == value:
+            return value
+        else:
+            return None
