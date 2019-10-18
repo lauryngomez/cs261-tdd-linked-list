@@ -64,4 +64,10 @@ class LinkedList:
         node.next = right_node
         right_node.prev = node
         left_node.next = node
-        
+
+    def at(self, index):
+        if index == 0:
+            return self
+        else:
+            self = self.next
+            return self.at(index-1)
