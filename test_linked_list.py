@@ -367,18 +367,18 @@ class TestLinkedList(unittest.TestCase):
     #     ll.append(second_node)
     #     self.assertEqual(second_node, ll.search(value))
 
-    # """
-    # Maintaining Order
-    # """
+    """
+    Maintaining Order
+    """
 
-    # def test_insert_in_order_when_empty(self):
-    #     """
-    #     Inserting a node in an empty sorted list just appends the new node.
-    #     """
-    #     ll = LinkedList()
-    #     ll.insert_in_order(LinkedList(8))
-    #     self.assertEqual(None, ll.at(0).value)
-    #     self.assertEqual(8, ll.at(1).value)
+    def test_insert_in_order_when_empty(self):
+        """
+        Inserting a node in an empty sorted list just appends the new node.
+        """
+        ll = LinkedList()
+        ll.insert_in_order(LinkedList(8))
+        self.assertEqual(None, ll.at(0).value)
+        self.assertEqual(8, ll.at(1).value)
 
     # def test_insert_in_order_less_than(self):
     #     """

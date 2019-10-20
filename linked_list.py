@@ -73,7 +73,13 @@ class LinkedList:
             return self.at(index-1)
 
     def search(self, value):
-        if self.value == value:
-            return value
-        else:
+        # if self.value == value:
+        #     return self
+        # elif self.value != value:
+        #     self = self.next
+        #     return self.search(value)
+        # else:
             return None
+
+    def insert_in_order(self, node):
+        self.append(node)
